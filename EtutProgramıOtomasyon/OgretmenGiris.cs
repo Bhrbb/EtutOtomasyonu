@@ -61,9 +61,7 @@ namespace EtutProgramıOtomasyon
                // DersAd =context.ogretmenler.Where() ,
                OgrenciAdSoyad = textBox1.Text,
                OgretmenAdSoyad = k,
-
                Tarih = maskedTextBox1.Text,
-
                Saat = maskedTextBox2.Text
 
 
