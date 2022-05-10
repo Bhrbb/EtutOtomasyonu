@@ -10,3 +10,15 @@ C:\Users\bhrbz\source\repos\EtutProgramıOtomasyon\Entities\obj\Debug\Entities.c
 C:\Users\bhrbz\source\repos\EtutProgramıOtomasyon\Entities\obj\Debug\Entities.csproj.CopyComplete
 C:\Users\bhrbz\source\repos\EtutProgramıOtomasyon\Entities\obj\Debug\Entities.dll
 C:\Users\bhrbz\source\repos\EtutProgramıOtomasyon\Entities\obj\Debug\Entities.pdb
+C:\Users\bhrbz\source\repos\EtutOtomasyonu\Entities\bin\Debug\Entities.dll.config
+C:\Users\bhrbz\source\repos\EtutOtomasyonu\Entities\bin\Debug\Entities.dll
+C:\Users\bhrbz\source\repos\EtutOtomasyonu\Entities\bin\Debug\Entities.pdb
+C:\Users\bhrbz\source\repos\EtutOtomasyonu\Entities\bin\Debug\EntityFramework.dll
+C:\Users\bhrbz\source\repos\EtutOtomasyonu\Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\bhrbz\source\repos\EtutOtomasyonu\Entities\bin\Debug\EntityFramework.xml
+C:\Users\bhrbz\source\repos\EtutOtomasyonu\Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\bhrbz\source\repos\EtutOtomasyonu\Entities\obj\Debug\Entities.csproj.AssemblyReference.cache
+C:\Users\bhrbz\source\repos\EtutOtomasyonu\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+C:\Users\bhrbz\source\repos\EtutOtomasyonu\Entities\obj\Debug\Entities.csproj.CopyComplete
+C:\Users\bhrbz\source\repos\EtutOtomasyonu\Entities\obj\Debug\Entities.dll
+C:\Users\bhrbz\source\repos\EtutOtomasyonu\Entities\obj\Debug\Entities.pdb
