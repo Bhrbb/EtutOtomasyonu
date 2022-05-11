@@ -25,9 +25,28 @@ namespace EtutProgramıOtomasyon
         OgretmenEtutManager oe = new OgretmenEtutManager();
         DataContext context = new DataContext();
         OgretmenManager om = new OgretmenManager();
-
+        DateTime bugun=DateTime.Now;
         string k = "";
-        
+        public void SaatleriYukle()
+        {
+
+            cmbsaat.Items.Add("08:30");
+            cmbsaat.Items.Add("09:30");
+            cmbsaat.Items.Add("10:30");
+            cmbsaat.Items.Add("11:30");
+            cmbsaat.Items.Add("13:30");
+            cmbsaat.Items.Add("14:30");
+            cmbsaat.Items.Add("15:30");
+            cmbsaat.Items.Add("16:30");
+            //foreach (DataGridViewRow row in dataGridView1.Rows)
+            //{
+            //    if (row.Cells[3].Value.ToString() == cmbsaat.Contains.)
+            //    {
+            //        cmbsaat.Items.Remove(cmbsaat.SelectedItem);
+            //    }
+            //}
+           
+        }
         private void OgretmenGiris_Load(object sender, EventArgs e)
         {
 
@@ -38,6 +57,8 @@ namespace EtutProgramıOtomasyon
             }
 
             dataGridView1.DataSource = Em.GetAll1(x => x.OgretmenAdSoyad == k);
+
+            SaatleriYukle();
            
         }
         public void KayıtEkle()
@@ -47,11 +68,12 @@ namespace EtutProgramıOtomasyon
          new Etut
          {
 
+             
 
              DersAd = dataGridView1.Rows[0].Cells[4].Value.ToString(),
              OgrenciAdSoyad = textBox1.Text,
              OgretmenAdSoyad = k,
-             Tarih = maskedTextBox1.Text,
+             Tarih = dateTimePicker1.Value.ToShortDateString().Replace('/','.'),
              Saat = cmbsaat.Text
 
 
@@ -59,11 +81,12 @@ namespace EtutProgramıOtomasyon
             if (islem > 0)
             {
                 dataGridView1.DataSource = Em.GetAll1(x => x.OgretmenAdSoyad == k);
+                cmbsaat.Items.Remove(cmbsaat.SelectedItem);
                 MessageBox.Show("Kayıt başarılı!");
             }
             else
                 MessageBox.Show("Kayıt başarısız!");
-        }
+        }//Kayıt ekleme Metot
         private void button2_Click(object sender, EventArgs e)
         {
             int id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());//secilen ID yi aldık 
@@ -86,26 +109,43 @@ namespace EtutProgramıOtomasyon
                 MessageBox.Show("Silinecek Kaydı seçiniz...");
         }
 
-        private void btnolustur_Click(object sender, EventArgs e)
+        private void btnolustur_Click(object sender, EventArgs e)//daha once aynı saatte alınan randevu var mı dıye bakıyor
         {
             foreach(DataGridViewRow row in dataGridView1.Rows)
             {
-                if (row.Cells[2].Value.ToString()!=maskedTextBox1.Text)
+                string tarih = dateTimePicker1.Value.ToShortDateString().Replace('/', '.');
+                if (row.Cells[2].Value.ToString()==tarih)
                 {
-                    if (row.Cells[3].Value.ToString()!=maskedTextBox2.Text)
+                    
+                    if (row.Cells[3].Value.ToString()!=cmbsaat.Text)
                     {
-                        KayıtEkle();
-                        break;
+                        if (dateTimePicker1.Value >= bugun)
+                        {
+                            KayıtEkle();
+
+                            break;
+                        }
+                        else
+                            MessageBox.Show("Lütfen tarihi kontrol ediniz");
+                        
                     }
                     else
                     {
-                        MessageBox.Show("Hata");
+                        MessageBox.Show("Lutfen saati kontrol edin !");
                         break;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Hata2");
+                    if (dateTimePicker1.Value >= bugun)
+                    {
+                        KayıtEkle();
+
+                        break;
+                    }
+                    else
+                        MessageBox.Show("Lütfen tarihi kontrol ediniz");
+                   
                     break;
                 }
             }
@@ -123,19 +163,32 @@ namespace EtutProgramıOtomasyon
                         ID = id,
                         DersAd = dataGridView1.Rows[0].Cells[4].Value.ToString(),
                         OgrenciAdSoyad = textBox1.Text,
-                        Tarih = maskedTextBox1.Text,
-                        Saat = maskedTextBox2.Text,
+                        Tarih = dateTimePicker1.Value.ToShortDateString(),
+                        Saat = cmbsaat.Text,
                         OgretmenAdSoyad = k,
                     }
                     );
                 if (guncelleislem > 0)
                 {
+                    cmbsaat.Items.Remove(cmbsaat.SelectedIndex);
                     MessageBox.Show("Güncelleme başarılı");
                 }
                 else
                     MessageBox.Show("Güncelleme başarısız");
                
             }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            cmbsaat.Items.Clear();
+            SaatleriYukle();
+           
+        }
+
+        private void cmbsaat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
