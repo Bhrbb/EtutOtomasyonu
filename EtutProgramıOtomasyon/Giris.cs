@@ -65,8 +65,8 @@ namespace EtutProgramıOtomasyon
                 else
                     MessageBox.Show("Lütfen bilgileri kontrol edniz!");
 
-                OgretmenGiris o = new OgretmenGiris(kullan);
-                o.Show();
+                //OgretmenGiris o = new OgretmenGiris(kullan);
+                //o.Show();
             }
 
 

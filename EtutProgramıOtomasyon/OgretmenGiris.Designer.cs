@@ -31,13 +31,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnolustur = new System.Windows.Forms.Button();
+            this.btndegistir = new System.Windows.Forms.Button();
+            this.btnsil = new System.Windows.Forms.Button();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cmbsaat = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -66,7 +69,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.cmbsaat);
+            this.groupBox2.Controls.Add(this.btnolustur);
+            this.groupBox2.Controls.Add(this.btndegistir);
+            this.groupBox2.Controls.Add(this.btnsil);
             this.groupBox2.Controls.Add(this.maskedTextBox2);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.maskedTextBox1);
@@ -79,6 +85,72 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Etut Olustur";
+            // 
+            // btnolustur
+            // 
+            this.btnolustur.Location = new System.Drawing.Point(89, 174);
+            this.btnolustur.Name = "btnolustur";
+            this.btnolustur.Size = new System.Drawing.Size(136, 43);
+            this.btnolustur.TabIndex = 13;
+            this.btnolustur.Text = "Etut Oluştur";
+            this.btnolustur.UseVisualStyleBackColor = true;
+            this.btnolustur.Click += new System.EventHandler(this.btnolustur_Click);
+            // 
+            // btndegistir
+            // 
+            this.btndegistir.Location = new System.Drawing.Point(373, 174);
+            this.btndegistir.Name = "btndegistir";
+            this.btndegistir.Size = new System.Drawing.Size(136, 43);
+            this.btndegistir.TabIndex = 12;
+            this.btndegistir.Text = "Değiştir";
+            this.btndegistir.UseVisualStyleBackColor = true;
+            this.btndegistir.Click += new System.EventHandler(this.btndegistir_Click);
+            // 
+            // btnsil
+            // 
+            this.btnsil.Location = new System.Drawing.Point(231, 174);
+            this.btnsil.Name = "btnsil";
+            this.btnsil.Size = new System.Drawing.Size(136, 43);
+            this.btnsil.TabIndex = 11;
+            this.btnsil.Text = "Sil";
+            this.btnsil.UseVisualStyleBackColor = true;
+            this.btnsil.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Location = new System.Drawing.Point(373, 96);
+            this.maskedTextBox2.Mask = "90:00";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(136, 30);
+            this.maskedTextBox2.TabIndex = 9;
+            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(126, 136);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 24);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Saat:";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(209, 90);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(136, 30);
+            this.maskedTextBox1.TabIndex = 7;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(126, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 24);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Tarih:";
             // 
             // textBox1
             // 
@@ -96,50 +168,22 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Ogrenci Ad Soyad:";
             // 
-            // label2
+            // cmbsaat
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(126, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 24);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Tarih:";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(209, 90);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(136, 30);
-            this.maskedTextBox1.TabIndex = 7;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(126, 136);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 24);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Saat:";
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(209, 126);
-            this.maskedTextBox2.Mask = "90:00";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(136, 30);
-            this.maskedTextBox2.TabIndex = 9;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(209, 174);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 43);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Etut Oluştur";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cmbsaat.FormattingEnabled = true;
+            this.cmbsaat.Items.AddRange(new object[] {
+            "08:30",
+            "09:30",
+            "10:30",
+            "11:30",
+            "13:30",
+            "14:30",
+            "15:30",
+            "16:30"});
+            this.cmbsaat.Location = new System.Drawing.Point(209, 126);
+            this.cmbsaat.Name = "cmbsaat";
+            this.cmbsaat.Size = new System.Drawing.Size(136, 32);
+            this.cmbsaat.TabIndex = 15;
             // 
             // OgretmenGiris
             // 
@@ -149,7 +193,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OgretmenGiris";
             this.Text = "OgretmenGiris";
             this.Load += new System.EventHandler(this.OgretmenGiris_Load);
@@ -166,12 +210,15 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btndegistir;
+        private System.Windows.Forms.Button btnsil;
+        private System.Windows.Forms.Button btnolustur;
+        private System.Windows.Forms.ComboBox cmbsaat;
     }
 }

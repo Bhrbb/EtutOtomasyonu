@@ -23,11 +23,6 @@ namespace EtutProgramıOtomasyon
         EtutManagercs Em =  new EtutManagercs();
         OgrenciManager om= new OgrenciManager();
         DataContext context = new DataContext();
-       
-        private void OgrenciAra_Load(object sender, EventArgs e)
-        {
-           
-        }
         public  void ogrencinoyagöre()
         {
             int ıd = int.Parse(txtno.Text);
@@ -47,10 +42,7 @@ namespace EtutProgramıOtomasyon
         public void ogrenciadinagöre()
         {
             string ad = (txtad.Text);
-            //var ogrenci = context.ogrenciler.Where(o => o.OgrenciAdSoyad == ad);
-            //var ogrenciders=context.etutler.Where(o=>o.OgrenciAdSoyad == ad);
             var ogrenci = om.GetAll1(o => o.OgrenciAdSoyad == ad);
-           
             var ogrencibilgi = Em.GetAll1(o => o.OgrenciAdSoyad == ad);
             dataGridView1.DataSource = ogrencibilgi.ToList();
 
@@ -62,30 +54,12 @@ namespace EtutProgramıOtomasyon
                 // pictureBox1.Image = ogr. eksik kaldı yap
             }
 
-
-
-        }
-        public void ogrenciName()
-        {
-            string ad = txtad.Text;
-            var ders = om.GetAll1(o => o.OgrenciAdSoyad == ad);
-            //var ders = context.etutler.Where(o => o.OgrenciAdSoyad == ad);
-            dataGridView1.DataSource = ders.ToList();
         }
         public void sinifagöre()
         {
             string sinifi = txtsoyad.Text;
             var sinif = context.ogrenciler.Where(o => o.Sinifi== sinifi);
             dataGridView1.DataSource=sinif.ToList();
-
-            //foreach (var sin in sinif)
-            //{
-            //    lblad.Text = sin.OgrenciAdSoyad.ToString();
-            //    lbltelefon.Text = sin.TelNo.ToString();
-            //    lblsoyad.Text = sin.Sinifi.ToString();
-            //    // pictureBox1.Image = ogr. eksik kaldı yap
-            //}
-           
         }
         public void istatistikogrenciadinagöre()
         {
@@ -141,10 +115,6 @@ namespace EtutProgramıOtomasyon
             }
             else
                 MessageBox.Show("Aranacak bilgi giriniz!");
-          
-
-
-
         }
 
         private void btnguncelle_Click(object sender, EventArgs e)
@@ -164,6 +134,12 @@ namespace EtutProgramıOtomasyon
                     }
 
                     );
+                if (islems > 0)
+                {
+                    MessageBox.Show("Guncelleme basarılı");
+                }
+                else
+                    MessageBox.Show("Guncelleme başarısız");
             }
 
         }

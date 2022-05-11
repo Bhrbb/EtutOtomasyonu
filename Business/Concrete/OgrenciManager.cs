@@ -15,7 +15,7 @@ namespace Business.Concrete
     public class OgrenciManager:Repository<Ogrenci>
     {
        
-
+        
        
     }
 }

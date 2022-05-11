@@ -332,7 +332,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OgrenciAra";
             this.Text = "OgrenciAra";
-            this.Load += new System.EventHandler(this.OgrenciAra_Load);
+         //   this.Load += new System.EventHandler(this.OgrenciAra_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
