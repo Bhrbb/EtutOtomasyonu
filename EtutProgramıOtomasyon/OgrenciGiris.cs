@@ -15,13 +15,17 @@ namespace EtutProgramıOtomasyon
 {
     public partial class OgrenciGiris : Form
     {
-        public OgrenciGiris()
+        List<Kullanici> kullan = new List<Kullanici>() ;
+       
+        public OgrenciGiris(List<Kullanici> ogrenci)
         {
             InitializeComponent();
+            this.kullan = ogrenci;
         }
         OgrenciManager om = new OgrenciManager();
-        EtutManagercs em=new EtutManagercs();
+        EtutManagercs em = new EtutManagercs();
         DataContext context = new DataContext();
+        string k = "";
         private void OgrenciGiris_Load(object sender, EventArgs e)
         {
             var ders = context.brans.ToList();//bransı doldur
@@ -39,9 +43,55 @@ namespace EtutProgramıOtomasyon
             {
                 cmbogrenci.Items.Add(new { Text = ogr.OgrenciAdSoyad, Value = ogr.ID });
             }
+            SaatleriYukle();
+            foreach (Kullanici item in kullan)
+            {
+                k = item.KullaniciAd;
 
+            }
+
+            dataGridView1.DataSource = em.GetAll1(x => x.OgrenciAdSoyad == k);
         }
 
+        public void SaatleriYukle()
+        {
+
+            comboBox1.Items.Add("08:30");
+            comboBox1.Items.Add("09:30");
+            comboBox1.Items.Add("10:30");
+            comboBox1.Items.Add("11:30");
+            comboBox1.Items.Add("13:30");
+            comboBox1.Items.Add("14:30");
+            comboBox1.Items.Add("15:30");
+
+            //var ogretmen = em.Find(x => x.OgretmenAdSoyad == cmbogretmen.Text);
+            //if (ogretmen != null)
+            //{
+            //    var tarih = em.Find(x => x.Tarih == dateTimePicker1.Text);
+            //    if (tarih != null)
+            //    {
+            //        foreach (var d in comboBox1.Items)
+            //        {
+            //            string[] items = new string[comboBox1.Items.Count];
+            //            for (int i = 0; i < comboBox1.Items.Count; i++)
+            //            {
+            //                items[i] = comboBox1.Items[i].ToString();
+            //                if (items[i] == em.Find())
+            //                {
+            //                    comboBox1.Items.Remove(items[i]);
+            //                }
+            //            }
+
+            //        }
+            //    }
+            //}
+
+
+
+
+
+
+        }
         private void button1_Click(object sender, EventArgs e)//bırebır olusturmak
         {
             int islem = em.Add(
@@ -50,20 +100,19 @@ namespace EtutProgramıOtomasyon
 
                   // Adi = cmbders.Text,
                   DersAd = cmbders.Text,
-                  OgrenciAdSoyad = cmbogrenci.Text,
+                  OgrenciAdSoyad = k,
                   OgretmenAdSoyad = cmbogretmen.Text,
-
-                  Tarih = maskedTextBox2.Text,
-
-                  Saat = maskedTextBox3.Text
+                  Tarih = dateTimePicker1.Text,
+                  Saat = comboBox1.Text
 
 
               }
 
-              );
+              ) ;
             if (islem > 0)
             {
-                dataGridView1.DataSource = em.GetAll();
+               
+                dataGridView1.DataSource = em.GetAll1(x => x.OgrenciAdSoyad == k);
                 MessageBox.Show("Kayıt başarılı!");
             }
             else
@@ -72,11 +121,13 @@ namespace EtutProgramıOtomasyon
 
         private void cmbders_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cmbogretmen.Items.Clear();
             var ogrtmenler = context.ogretmenler.Where(o => o.ID == cmbders.SelectedIndex + 1);
             cmbogretmen.DisplayMember = "Text";
             cmbogretmen.ValueMember = "Value";
             foreach (var ogrt in ogrtmenler)
             {
+
                 cmbogretmen.Items.Add(new { Text = ogrt.OgretmenAdSoyad, Value = ogrt.BransAd });
             }
         }
@@ -96,11 +147,11 @@ namespace EtutProgramıOtomasyon
 
                      // Adi = cmbders.Text,
                      DersAd = cmbders.Text,
-                     OgrenciAdSoyad = cmbogrenci.Text,
+                     OgrenciAdSoyad = k,
                      OgretmenAdSoyad = cmbogretmen.Text,
 
-                     Tarih = maskedTextBox2.Text,
-                     Saat = maskedTextBox3.Text
+                     Tarih = dateTimePicker1.Text,
+                     Saat = comboBox1.Text
 
 
                  }
@@ -138,6 +189,18 @@ namespace EtutProgramıOtomasyon
             else
                 MessageBox.Show("Silinecek Kaydı seçiniz...");
 
+        }
+
+        private void cmbogretmen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            SaatleriYukle();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+           
         }
     }
 }

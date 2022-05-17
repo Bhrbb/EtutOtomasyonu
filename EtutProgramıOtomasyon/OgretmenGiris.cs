@@ -29,7 +29,6 @@ namespace EtutProgramıOtomasyon
         string k = "";
         public void SaatleriYukle()
         {
-
             cmbsaat.Items.Add("08:30");
             cmbsaat.Items.Add("09:30");
             cmbsaat.Items.Add("10:30");
@@ -38,14 +37,20 @@ namespace EtutProgramıOtomasyon
             cmbsaat.Items.Add("14:30");
             cmbsaat.Items.Add("15:30");
             cmbsaat.Items.Add("16:30");
-            //foreach (DataGridViewRow row in dataGridView1.Rows)
-            //{
-            //    if (row.Cells[3].Value.ToString() == cmbsaat.Contains.)
-            //    {
-            //        cmbsaat.Items.Remove(cmbsaat.SelectedItem);
-            //    }
-            //}
-           
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[2].Value.ToString()== dateTimePicker1.Value.ToShortDateString())
+                {
+
+                    if (cmbsaat.Items.Contains(row.Cells[3].Value.ToString())==true)
+                    {
+                        cmbsaat.Items.RemoveAt(cmbsaat.Items.IndexOf(row.Cells[3].Value.ToString()));
+                    }
+                }
+               
+            }
+
         }
         private void OgretmenGiris_Load(object sender, EventArgs e)
         {
@@ -184,6 +189,14 @@ namespace EtutProgramıOtomasyon
             cmbsaat.Items.Clear();
             SaatleriYukle();
            
+        }
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox1.Text=dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            dateTimePicker1.Text= dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            cmbsaat.Text= dataGridView1.CurrentRow.Cells[3].Value.ToString();
         }
 
         private void cmbsaat_SelectedIndexChanged(object sender, EventArgs e)

@@ -30,19 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OgrenciGiris));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnsil = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.lblID = new System.Windows.Forms.Label();
             this.btndegistir = new System.Windows.Forms.Button();
             this.cmbogretmen = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.cmbders = new System.Windows.Forms.ComboBox();
-            this.cmbogrenci = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -57,19 +54,16 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.btnsil);
-            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.lblID);
             this.groupBox1.Controls.Add(this.btndegistir);
             this.groupBox1.Controls.Add(this.cmbogretmen);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cmbders);
-            this.groupBox1.Controls.Add(this.cmbogrenci);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.maskedTextBox3);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.maskedTextBox2);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(118, 45);
@@ -78,6 +72,23 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "BirebirOlusturma";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(207, 137);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(138, 32);
+            this.comboBox1.TabIndex = 19;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(207, 103);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(138, 30);
+            this.dateTimePicker1.TabIndex = 18;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // btnsil
             // 
@@ -88,16 +99,6 @@
             this.btnsil.Text = "Sil";
             this.btnsil.UseVisualStyleBackColor = true;
             this.btnsil.Click += new System.EventHandler(this.btnsil_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(366, 175);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(75, 28);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "İptal";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // lblID
             // 
@@ -126,6 +127,7 @@
             this.cmbogretmen.Name = "cmbogretmen";
             this.cmbogretmen.Size = new System.Drawing.Size(140, 32);
             this.cmbogretmen.TabIndex = 12;
+            this.cmbogretmen.SelectedIndexChanged += new System.EventHandler(this.cmbogretmen_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -155,32 +157,6 @@
             this.cmbders.TabIndex = 9;
             this.cmbders.SelectedIndexChanged += new System.EventHandler(this.cmbders_SelectedIndexChanged);
             // 
-            // cmbogrenci
-            // 
-            this.cmbogrenci.FormattingEnabled = true;
-            this.cmbogrenci.Location = new System.Drawing.Point(205, 175);
-            this.cmbogrenci.Name = "cmbogrenci";
-            this.cmbogrenci.Size = new System.Drawing.Size(140, 32);
-            this.cmbogrenci.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(104, 179);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 24);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Ögrenci:";
-            // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(205, 139);
-            this.maskedTextBox3.Mask = "00:00";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(140, 30);
-            this.maskedTextBox3.TabIndex = 6;
-            this.maskedTextBox3.ValidatingType = typeof(System.DateTime);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -189,15 +165,6 @@
             this.label3.Size = new System.Drawing.Size(58, 24);
             this.label3.TabIndex = 5;
             this.label3.Text = "Saat:";
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(205, 103);
-            this.maskedTextBox2.Mask = "00/00/0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(140, 30);
-            this.maskedTextBox2.TabIndex = 4;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
             // 
             // label2
             // 
@@ -260,7 +227,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OgrenciGiris";
             this.Text = "OgrenciGiris";
             this.Load += new System.EventHandler(this.OgrenciGiris_Load);
@@ -277,22 +244,19 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnsil;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Button btndegistir;
         private System.Windows.Forms.ComboBox cmbogretmen;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cmbders;
-        private System.Windows.Forms.ComboBox cmbogrenci;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
