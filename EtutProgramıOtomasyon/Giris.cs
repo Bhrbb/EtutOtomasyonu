@@ -24,16 +24,12 @@ namespace EtutProgramıOtomasyon
         Kullanici k= new Kullanici();
         OgretmenManager ogr = new OgretmenManager();
         // DataContext context = new DataContext();
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
            
-           var kuyllanici=km.Find(k=>k.KullaniciAd==textBox1.Text&& k.Sifre==textBox2.Text && k.Yetki==1);
-           var kuyllanici2=km.Find(k=>k.KullaniciAd==textBox1.Text&& k.Sifre==textBox2.Text && k.Yetki==2);
+           var kuyllanici=km.Find(k=>k.KullaniciAd==(textBox1.Text).ToUpper()&& k.Sifre==textBox2.Text && k.Yetki==1);
+           var kuyllanici2=km.Find(k=>k.KullaniciAd==(textBox1.Text).ToUpper()&& k.Sifre==textBox2.Text && k.Yetki==2);
            var kuyllanici3=km.Find(k=>k.KullaniciAd==textBox1.Text&& k.Sifre==textBox2.Text && k.Yetki==3);
           //  var kul = km.GetAll1(k => k.KullaniciAd == textBox1.Text && k.Sifre == textBox2.Text && k.Yetki == 3);
             kullan.Add(kuyllanici3);
@@ -52,7 +48,7 @@ namespace EtutProgramıOtomasyon
                 }
                 else if (kuyllanici2 != null)
                 {
-                    OgrenciGiris ogrenciGiris = new OgrenciGiris();
+                    OgrenciGiris ogrenciGiris = new OgrenciGiris(kullan);
                     ogrenciGiris.Show();
                     this.Hide();
                 }
@@ -65,12 +61,16 @@ namespace EtutProgramıOtomasyon
                 else
                     MessageBox.Show("Lütfen bilgileri kontrol edniz!");
 
-                //OgretmenGiris o = new OgretmenGiris(kullan);
-                //o.Show();
+                
             }
 
 
 
+
+        }
+
+        private void Giris_Load(object sender, EventArgs e)
+        {
 
         }
     }

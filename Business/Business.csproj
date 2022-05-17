@@ -60,8 +60,6 @@
     <Compile Include="Concrete\OgrenciManager.cs" />
     <Compile Include="Concrete\OgretmenEtutManager.cs" />
     <Compile Include="Concrete\OgretmenManager.cs" />
-    <Compile Include="Concrete\Repository.cs" />
-    <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

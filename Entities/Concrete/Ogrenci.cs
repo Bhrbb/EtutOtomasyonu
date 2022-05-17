@@ -12,5 +12,8 @@ namespace Entities.Concrete
         public string OgrenciAdSoyad { get; set; }
         public string Sinifi { get; set; }
         public string TelNo { get; set; }
+
+
+       
     }
 }

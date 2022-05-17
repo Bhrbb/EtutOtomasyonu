@@ -43,6 +43,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnsil = new System.Windows.Forms.Button();
             this.txttelefonu = new System.Windows.Forms.TextBox();
             this.txtsinifi = new System.Windows.Forms.TextBox();
@@ -57,7 +58,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -160,6 +160,16 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "OgrenciBilgileri";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(293, 204);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 37);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Geri Dön";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnsil
             // 
@@ -270,6 +280,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(673, 144);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox4
             // 
@@ -309,16 +320,6 @@
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(293, 204);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 37);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Geri Dön";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // OgrenciAra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -332,7 +333,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OgrenciAra";
             this.Text = "OgrenciAra";
-         //   this.Load += new System.EventHandler(this.OgrenciAra_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);

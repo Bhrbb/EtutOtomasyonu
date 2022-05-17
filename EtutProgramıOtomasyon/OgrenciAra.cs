@@ -147,7 +147,7 @@ namespace EtutProgramıOtomasyon
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             label4.Text= dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtadi.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtadi.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             txtsinifi.Text=dataGridView1.CurrentRow.Cells[2].Value.ToString();
             txttelefonu.Text=dataGridView1.CurrentRow.Cells[3].Value.ToString();
         }
@@ -180,6 +180,11 @@ namespace EtutProgramıOtomasyon
             Sekreter1 sekreter = new Sekreter1();
             sekreter.Show();
             this.Hide();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

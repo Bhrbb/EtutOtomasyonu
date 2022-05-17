@@ -31,6 +31,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnsil = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.lblID = new System.Windows.Forms.Label();
@@ -41,12 +42,11 @@
             this.cmbders = new System.Windows.Forms.ComboBox();
             this.cmbogrenci = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cmbsaat = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -76,6 +76,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbsaat);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnsil);
             this.groupBox1.Controls.Add(this.checkBox1);
@@ -87,9 +89,7 @@
             this.groupBox1.Controls.Add(this.cmbders);
             this.groupBox1.Controls.Add(this.cmbogrenci);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.maskedTextBox3);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.maskedTextBox2);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(15, 12);
@@ -98,6 +98,16 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "BirebirOlusturma";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(426, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(112, 37);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "Geri Dön";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnsil
             // 
@@ -146,7 +156,7 @@
             this.cmbogretmen.Name = "cmbogretmen";
             this.cmbogretmen.Size = new System.Drawing.Size(140, 32);
             this.cmbogretmen.TabIndex = 12;
-            this.cmbogretmen.SelectedIndexChanged += new System.EventHandler(this.cmbogretmen_SelectedIndexChanged);
+         //   this.cmbogretmen.SelectedIndexChanged += new System.EventHandler(this.cmbogretmen_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -193,15 +203,6 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Ögrenci:";
             // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(205, 139);
-            this.maskedTextBox3.Mask = "00:00";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(140, 30);
-            this.maskedTextBox3.TabIndex = 6;
-            this.maskedTextBox3.ValidatingType = typeof(System.DateTime);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -210,15 +211,6 @@
             this.label3.Size = new System.Drawing.Size(58, 24);
             this.label3.TabIndex = 5;
             this.label3.Text = "Saat:";
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(205, 103);
-            this.maskedTextBox2.Mask = "00/00/0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(140, 30);
-            this.maskedTextBox2.TabIndex = 4;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
             // 
             // label2
             // 
@@ -238,15 +230,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Ders:";
             // 
-            // button2
+            // dateTimePicker1
             // 
-            this.button2.Location = new System.Drawing.Point(426, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 37);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Geri Dön";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(205, 103);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(142, 30);
+            this.dateTimePicker1.TabIndex = 23;
+            // 
+            // cmbsaat
+            // 
+            this.cmbsaat.FormattingEnabled = true;
+            this.cmbsaat.Location = new System.Drawing.Point(205, 139);
+            this.cmbsaat.Name = "cmbsaat";
+            this.cmbsaat.Size = new System.Drawing.Size(142, 32);
+            this.cmbsaat.TabIndex = 24;
             // 
             // EtutOlustur
             // 
@@ -277,9 +275,7 @@
         private System.Windows.Forms.ComboBox cmbders;
         private System.Windows.Forms.ComboBox cmbogrenci;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbogretmen;
@@ -289,5 +285,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button btnsil;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cmbsaat;
     }
 }
