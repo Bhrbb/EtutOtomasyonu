@@ -15,18 +15,19 @@ namespace EtutProgramıOtomasyon
 {
     public partial class OgretmenGiris : Form
     {
-        List<Kullanici> kullan = new List<Kullanici>();
-        public OgretmenGiris(List<Kullanici> kullan)
+        // List<Kullanici> kullan = new List<Kullanici>();
+        string ogrt = "";
+        public OgretmenGiris(string ogrtmn)
         {
             InitializeComponent();
-            this.kullan = kullan;
+            ogrt = ogrtmn;
         }
         EtutManagercs Em = new EtutManagercs();
         OgretmenEtutManager oe = new OgretmenEtutManager();
         DataContext context = new DataContext();
         OgretmenManager om = new OgretmenManager();
         DateTime bugun=DateTime.Now;
-        string k = "";
+       // string k = "";
         public void SaatleriYukle()
         {
             cmbsaat.Items.Add("08:30");
@@ -55,13 +56,13 @@ namespace EtutProgramıOtomasyon
         private void OgretmenGiris_Load(object sender, EventArgs e)
         {
 
-            foreach (Kullanici item in kullan)
-            {
-                k = item.KullaniciAd;
+            //foreach (Kullanici item in kullan)
+            //{
+            //    k = item.KullaniciAd;
                 
-            }
+            //}
 
-            dataGridView1.DataSource = Em.GetAll1(x => x.OgretmenAdSoyad == k);
+            dataGridView1.DataSource = Em.GetAll1(x => x.OgretmenAdSoyad == ogrt);
 
             SaatleriYukle();
            
@@ -77,7 +78,7 @@ namespace EtutProgramıOtomasyon
 
              DersAd = dataGridView1.Rows[0].Cells[4].Value.ToString(),
              OgrenciAdSoyad = textBox1.Text,
-             OgretmenAdSoyad = k,
+             OgretmenAdSoyad = ogrt,
              Tarih = dateTimePicker1.Value.ToShortDateString().Replace('/','.'),
              Saat = cmbsaat.Text
 
@@ -85,7 +86,7 @@ namespace EtutProgramıOtomasyon
          });
             if (islem > 0)
             {
-                dataGridView1.DataSource = Em.GetAll1(x => x.OgretmenAdSoyad == k);
+                dataGridView1.DataSource = Em.GetAll1(x => x.OgretmenAdSoyad == ogrt);
                 cmbsaat.Items.Remove(cmbsaat.SelectedItem);
                 MessageBox.Show("Kayıt başarılı!");
             }
@@ -103,7 +104,7 @@ namespace EtutProgramıOtomasyon
                     int islemd = Em.Delete(id);
                     if (islemd > 0)
                     {
-                        dataGridView1.DataSource = Em.GetAll1(x => x.OgretmenAdSoyad == k);
+                        dataGridView1.DataSource = Em.GetAll1(x => x.OgretmenAdSoyad == ogrt);
                         MessageBox.Show("Kayıt silindi!");
                     }
                     else
@@ -170,7 +171,7 @@ namespace EtutProgramıOtomasyon
                         OgrenciAdSoyad = textBox1.Text,
                         Tarih = dateTimePicker1.Value.ToShortDateString(),
                         Saat = cmbsaat.Text,
-                        OgretmenAdSoyad = k,
+                        OgretmenAdSoyad = ogrt,
                     }
                     );
                 if (guncelleislem > 0)

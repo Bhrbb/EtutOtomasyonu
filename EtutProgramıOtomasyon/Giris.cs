@@ -19,8 +19,9 @@ namespace EtutProgramıOtomasyon
         {
             InitializeComponent();
         }
-        List<Kullanici> kullan = new List<Kullanici>();
+        //List<Kullanici> kullan = new List<Kullanici>();
         string ogrc = "";
+        string ogrt = "";
         KullaniciManager km = new KullaniciManager();
    
         OgretmenManager ogr = new OgretmenManager();
@@ -31,8 +32,7 @@ namespace EtutProgramıOtomasyon
            var kuyllanici=km.Find(k=>k.KullaniciAd==(textBox1.Text).ToUpper()&& k.Sifre==textBox2.Text && k.Yetki==1);
            var kuyllanici2=km.Find(k=>k.KullaniciAd==(textBox1.Text).ToUpper()&& k.Sifre==textBox2.Text && k.Yetki==2);
            var kuyllanici3=km.Find(k=>k.KullaniciAd==textBox1.Text&& k.Sifre==textBox2.Text && k.Yetki==3);
-          //  var kul = km.GetAll1(k => k.KullaniciAd == textBox1.Text && k.Sifre == textBox2.Text && k.Yetki == 3);
-            kullan.Add(kuyllanici3);
+          //  kullan.Add(kuyllanici3);
             if (string.IsNullOrWhiteSpace(textBox1.Text)||string.IsNullOrWhiteSpace(textBox2.Text))
             {
                 MessageBox.Show("Kullanıcı Adı ve şifre boş geçilemez!");
@@ -44,7 +44,7 @@ namespace EtutProgramıOtomasyon
                 {
                     Sekreter1 sekreter1 = new Sekreter1();
                     sekreter1.Show();
-                    this.Hide();
+                   //  this.Hide();
                 }
                 else if (kuyllanici2 != null)
                 {
@@ -55,7 +55,8 @@ namespace EtutProgramıOtomasyon
                 }
                 else if (kuyllanici3!=null)
                 {
-                    OgretmenGiris ogretmenGiris = new OgretmenGiris(kullan);
+                    ogrt=textBox1.Text;
+                    OgretmenGiris ogretmenGiris = new OgretmenGiris(ogrt);
                     ogretmenGiris.Show();
 
                 }

@@ -26,16 +26,10 @@ namespace EtutProgramıOtomasyon
         OgrenciManager om = new OgrenciManager();
         EtutManagercs em = new EtutManagercs();
         DataContext context = new DataContext();
-        string k = "";
+      //  string k = "";
         private void OgrenciGiris_Load(object sender, EventArgs e)
         {
-            //foreach (Kullanici item in kullanc)
-            //{
-            //    k = item.KullaniciAd;
-
-            //}
            
-
             var ders = context.brans.ToList();//bransı doldur
             cmbders.DisplayMember = "Text";
             cmbders.ValueMember = "Value";
@@ -210,6 +204,13 @@ namespace EtutProgramıOtomasyon
             cmbogretmen.Text=dataGridView1.CurrentRow.Cells[5].Value.ToString();
             dateTimePicker1.Text=dataGridView1.CurrentRow.Cells[2].Value.ToString();
             comboBox1.Text= dataGridView1.CurrentRow.Cells[3].Value.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Giris grs=new Giris();
+            grs.Show();
+            this.Hide();
         }
     }
 }

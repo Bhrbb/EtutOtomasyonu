@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EtutOlustur));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbsaat = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.btnsil = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -45,8 +48,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cmbsaat = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -99,23 +100,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "BirebirOlusturma";
             // 
+            // cmbsaat
+            // 
+            this.cmbsaat.FormattingEnabled = true;
+            this.cmbsaat.Location = new System.Drawing.Point(205, 139);
+            this.cmbsaat.Name = "cmbsaat";
+            this.cmbsaat.Size = new System.Drawing.Size(142, 32);
+            this.cmbsaat.TabIndex = 24;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(205, 103);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(142, 30);
+            this.dateTimePicker1.TabIndex = 23;
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(426, 13);
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(465, 13);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 37);
+            this.button2.Size = new System.Drawing.Size(67, 45);
             this.button2.TabIndex = 22;
-            this.button2.Text = "Geri Dön";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnsil
             // 
-            this.btnsil.Location = new System.Drawing.Point(351, 213);
+            this.btnsil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnsil.BackgroundImage")));
+            this.btnsil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnsil.Location = new System.Drawing.Point(304, 222);
             this.btnsil.Name = "btnsil";
-            this.btnsil.Size = new System.Drawing.Size(140, 37);
+            this.btnsil.Size = new System.Drawing.Size(43, 32);
             this.btnsil.TabIndex = 17;
-            this.btnsil.Text = "Sil";
             this.btnsil.UseVisualStyleBackColor = true;
             this.btnsil.Click += new System.EventHandler(this.btnsil_Click);
             // 
@@ -141,11 +160,12 @@
             // 
             // btndegistir
             // 
-            this.btndegistir.Location = new System.Drawing.Point(207, 213);
+            this.btndegistir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btndegistir.BackgroundImage")));
+            this.btndegistir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btndegistir.Location = new System.Drawing.Point(236, 222);
             this.btndegistir.Name = "btndegistir";
-            this.btndegistir.Size = new System.Drawing.Size(140, 37);
+            this.btndegistir.Size = new System.Drawing.Size(50, 34);
             this.btndegistir.TabIndex = 13;
-            this.btndegistir.Text = "Değiştir";
             this.btndegistir.UseVisualStyleBackColor = true;
             this.btndegistir.Click += new System.EventHandler(this.btndegistir_Click);
             // 
@@ -156,7 +176,6 @@
             this.cmbogretmen.Name = "cmbogretmen";
             this.cmbogretmen.Size = new System.Drawing.Size(140, 32);
             this.cmbogretmen.TabIndex = 12;
-         //   this.cmbogretmen.SelectedIndexChanged += new System.EventHandler(this.cmbogretmen_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -169,11 +188,12 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(61, 213);
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(171, 222);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 37);
+            this.button1.Size = new System.Drawing.Size(49, 34);
             this.button1.TabIndex = 10;
-            this.button1.Text = "Oluştur";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -230,22 +250,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Ders:";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(205, 103);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(142, 30);
-            this.dateTimePicker1.TabIndex = 23;
-            // 
-            // cmbsaat
-            // 
-            this.cmbsaat.FormattingEnabled = true;
-            this.cmbsaat.Location = new System.Drawing.Point(205, 139);
-            this.cmbsaat.Name = "cmbsaat";
-            this.cmbsaat.Size = new System.Drawing.Size(142, 32);
-            this.cmbsaat.TabIndex = 24;
-            // 
             // EtutOlustur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -256,6 +260,7 @@
             this.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EtutOlustur";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EtutOlustur";
             this.Load += new System.EventHandler(this.EtutOlustur_Load);
             this.groupBox2.ResumeLayout(false);

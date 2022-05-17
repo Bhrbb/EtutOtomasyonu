@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OgretmenGiris));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -47,7 +48,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox1.Location = new System.Drawing.Point(1, 241);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(553, 227);
@@ -69,6 +72,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox2.BackgroundImage")));
+            this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.cmbsaat);
             this.groupBox2.Controls.Add(this.btnolustur);
@@ -78,6 +84,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox2.Location = new System.Drawing.Point(4, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(550, 223);
@@ -88,7 +95,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(209, 90);
+            this.dateTimePicker1.Location = new System.Drawing.Point(231, 84);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(136, 30);
             this.dateTimePicker1.TabIndex = 16;
@@ -97,7 +104,7 @@
             // cmbsaat
             // 
             this.cmbsaat.FormattingEnabled = true;
-            this.cmbsaat.Location = new System.Drawing.Point(209, 126);
+            this.cmbsaat.Location = new System.Drawing.Point(231, 120);
             this.cmbsaat.Name = "cmbsaat";
             this.cmbsaat.Size = new System.Drawing.Size(136, 32);
             this.cmbsaat.TabIndex = 15;
@@ -105,38 +112,45 @@
             // 
             // btnolustur
             // 
-            this.btnolustur.Location = new System.Drawing.Point(89, 174);
+            this.btnolustur.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnolustur.BackgroundImage")));
+            this.btnolustur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnolustur.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnolustur.Location = new System.Drawing.Point(180, 177);
             this.btnolustur.Name = "btnolustur";
-            this.btnolustur.Size = new System.Drawing.Size(136, 43);
+            this.btnolustur.Size = new System.Drawing.Size(55, 48);
             this.btnolustur.TabIndex = 13;
-            this.btnolustur.Text = "Etut Oluştur";
             this.btnolustur.UseVisualStyleBackColor = true;
             this.btnolustur.Click += new System.EventHandler(this.btnolustur_Click);
             // 
             // btndegistir
             // 
-            this.btndegistir.Location = new System.Drawing.Point(373, 174);
+            this.btndegistir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btndegistir.BackgroundImage")));
+            this.btndegistir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btndegistir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btndegistir.Location = new System.Drawing.Point(314, 177);
             this.btndegistir.Name = "btndegistir";
-            this.btndegistir.Size = new System.Drawing.Size(136, 43);
+            this.btndegistir.Size = new System.Drawing.Size(43, 46);
             this.btndegistir.TabIndex = 12;
-            this.btndegistir.Text = "Değiştir";
             this.btndegistir.UseVisualStyleBackColor = true;
             this.btndegistir.Click += new System.EventHandler(this.btndegistir_Click);
             // 
             // btnsil
             // 
-            this.btnsil.Location = new System.Drawing.Point(231, 174);
+            this.btnsil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnsil.BackgroundImage")));
+            this.btnsil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnsil.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnsil.Location = new System.Drawing.Point(253, 177);
             this.btnsil.Name = "btnsil";
-            this.btnsil.Size = new System.Drawing.Size(136, 43);
+            this.btnsil.Size = new System.Drawing.Size(43, 46);
             this.btnsil.TabIndex = 11;
-            this.btnsil.Text = "Sil";
             this.btnsil.UseVisualStyleBackColor = true;
             this.btnsil.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(126, 136);
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(148, 130);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 24);
             this.label3.TabIndex = 8;
@@ -145,7 +159,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(126, 96);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(148, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 24);
             this.label2.TabIndex = 5;
@@ -153,7 +168,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(209, 45);
+            this.textBox1.Location = new System.Drawing.Point(231, 39);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(136, 30);
             this.textBox1.TabIndex = 4;
@@ -161,7 +176,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 51);
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(45, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 24);
             this.label1.TabIndex = 3;
@@ -171,12 +188,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(569, 480);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OgretmenGiris";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OgretmenGiris";
             this.Load += new System.EventHandler(this.OgretmenGiris_Load);
             this.groupBox1.ResumeLayout(false);

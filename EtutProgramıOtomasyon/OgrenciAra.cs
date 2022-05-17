@@ -147,7 +147,7 @@ namespace EtutProgramıOtomasyon
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             label4.Text= dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtadi.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            txtadi.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             txtsinifi.Text=dataGridView1.CurrentRow.Cells[2].Value.ToString();
             txttelefonu.Text=dataGridView1.CurrentRow.Cells[3].Value.ToString();
         }
