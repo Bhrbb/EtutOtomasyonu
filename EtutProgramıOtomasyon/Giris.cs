@@ -20,11 +20,11 @@ namespace EtutProgramıOtomasyon
             InitializeComponent();
         }
         List<Kullanici> kullan = new List<Kullanici>();
+        string ogrc = "";
         KullaniciManager km = new KullaniciManager();
-        Kullanici k= new Kullanici();
+   
         OgretmenManager ogr = new OgretmenManager();
-        // DataContext context = new DataContext();
-
+     
         private void button1_Click(object sender, EventArgs e)
         {
            
@@ -48,7 +48,8 @@ namespace EtutProgramıOtomasyon
                 }
                 else if (kuyllanici2 != null)
                 {
-                    OgrenciGiris ogrenciGiris = new OgrenciGiris(kullan);
+                    ogrc = textBox1.Text;
+                    OgrenciGiris ogrenciGiris = new OgrenciGiris( ogrc);
                     ogrenciGiris.Show();
                     this.Hide();
                 }

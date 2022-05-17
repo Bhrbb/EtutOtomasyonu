@@ -15,12 +15,13 @@ namespace EtutProgramıOtomasyon
 {
     public partial class OgrenciGiris : Form
     {
-        List<Kullanici> kullan = new List<Kullanici>() ;
-       
-        public OgrenciGiris(List<Kullanici> ogrenci)
+      //  List<Kullanici> kullanc = new List<Kullanici>() ;
+        string ogrc = "";
+        public OgrenciGiris(string kullanc)
         {
             InitializeComponent();
-            this.kullan = ogrenci;
+            ogrc = kullanc;
+           
         }
         OgrenciManager om = new OgrenciManager();
         EtutManagercs em = new EtutManagercs();
@@ -28,6 +29,13 @@ namespace EtutProgramıOtomasyon
         string k = "";
         private void OgrenciGiris_Load(object sender, EventArgs e)
         {
+            //foreach (Kullanici item in kullanc)
+            //{
+            //    k = item.KullaniciAd;
+
+            //}
+           
+
             var ders = context.brans.ToList();//bransı doldur
             cmbders.DisplayMember = "Text";
             cmbders.ValueMember = "Value";
@@ -36,21 +44,17 @@ namespace EtutProgramıOtomasyon
                 cmbders.Items.Add(new { Text = d.DersAd, Value = d.ID });
             }
 
-            var ogrenci = context.ogrenciler.ToList();//ogrenciler
-            cmbogrenci.DisplayMember = "Text";
-            cmbogrenci.ValueMember = "Value";
-            foreach (var ogr in ogrenci)
-            {
-                cmbogrenci.Items.Add(new { Text = ogr.OgrenciAdSoyad, Value = ogr.ID });
-            }
+            //var ogrenci = context.ogrenciler.ToList();//ogrenciler
+            //cmbogrenci.DisplayMember = "Text";
+            //cmbogrenci.ValueMember = "Value";
+            //foreach (var ogr in ogrenci)
+            //{
+            //    cmbogrenci.Items.Add(new { Text = ogr.OgrenciAdSoyad, Value = ogr.ID });
+            //}
             SaatleriYukle();
-            foreach (Kullanici item in kullan)
-            {
-                k = item.KullaniciAd;
+           
 
-            }
-
-            dataGridView1.DataSource = em.GetAll1(x => x.OgrenciAdSoyad == k);
+            dataGridView1.DataSource = em.GetAll1(x => x.OgrenciAdSoyad == ogrc);
         }
 
         public void SaatleriYukle()
@@ -100,7 +104,7 @@ namespace EtutProgramıOtomasyon
 
                   // Adi = cmbders.Text,
                   DersAd = cmbders.Text,
-                  OgrenciAdSoyad = k,
+                  OgrenciAdSoyad = ogrc,
                   OgretmenAdSoyad = cmbogretmen.Text,
                   Tarih = dateTimePicker1.Text,
                   Saat = comboBox1.Text
@@ -112,7 +116,7 @@ namespace EtutProgramıOtomasyon
             if (islem > 0)
             {
                
-                dataGridView1.DataSource = em.GetAll1(x => x.OgrenciAdSoyad == k);
+                dataGridView1.DataSource = em.GetAll1(x => x.OgrenciAdSoyad == ogrc);
                 MessageBox.Show("Kayıt başarılı!");
             }
             else
@@ -147,7 +151,7 @@ namespace EtutProgramıOtomasyon
 
                      // Adi = cmbders.Text,
                      DersAd = cmbders.Text,
-                     OgrenciAdSoyad = k,
+                     OgrenciAdSoyad = ogrc,
                      OgretmenAdSoyad = cmbogretmen.Text,
 
                      Tarih = dateTimePicker1.Text,
@@ -158,7 +162,7 @@ namespace EtutProgramıOtomasyon
                      );
                 if (islems > 0)
                 {
-                    dataGridView1.DataSource = em.GetAll();
+                    dataGridView1.DataSource = em.GetAll1(x => x.OgrenciAdSoyad == ogrc);
                     MessageBox.Show("Kayıt güncellendi!");
                 }
                 else
@@ -179,7 +183,7 @@ namespace EtutProgramıOtomasyon
                     int islemd = em.Delete(id);
                     if (islemd > 0)
                     {
-                        dataGridView1.DataSource = em.GetAll();
+                        dataGridView1.DataSource = em.GetAll1(x => x.OgrenciAdSoyad == ogrc);
                         MessageBox.Show("Kayıt silindi!");
                     }
                     else
@@ -197,10 +201,15 @@ namespace EtutProgramıOtomasyon
             SaatleriYukle();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
+       
 
-           
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblID.Text=dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            cmbders.Text=dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            cmbogretmen.Text=dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            dateTimePicker1.Text=dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            comboBox1.Text= dataGridView1.CurrentRow.Cells[3].Value.ToString();
         }
     }
 }
